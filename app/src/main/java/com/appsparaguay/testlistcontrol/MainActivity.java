@@ -1,5 +1,6 @@
 package com.appsparaguay.testlistcontrol;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,8 @@ import org.json.JSONObject;
 
 import java.util.Collection;
 import java.util.List;
+
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
                 binding.setUser(user);
             }
         });
-
+        binding.listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(intent);
+            }
+        });
         this.getPublicTimeline();
 
 
