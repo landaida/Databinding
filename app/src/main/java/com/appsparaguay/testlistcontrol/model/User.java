@@ -1,4 +1,4 @@
-package com.appsparaguay.testlistcontrol;
+package com.appsparaguay.testlistcontrol.model;
 
 /**
  * Created by Administrador on 9/7/2015.
