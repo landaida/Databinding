@@ -3,7 +3,7 @@
     >
 
     <data>
-        <import type="pl.snowdog.databindingsample.util.StringUtils"/>
+        <import type="com.appsparaguay.testlistcontrol.util.StringUtils"/>
         <variable name="user" type="com.appsparaguay.testlistcontrol.model.User"/>
     </data>
 
@@ -18,14 +18,14 @@
             android:layout_height="wrap_content"
             style="@android:style/TextAppearance.DeviceDefault.Large"
             android:layout_centerInParent="true"
-            android:text="@{user.text}"/>
+            android:text="@{user.firstName}"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/userText"
             android:layout_alignParentRight="true"
-            android:text="@{StringUtils.capitalize(user.author)}"/>
+            android:text="@{StringUtils.capitalize(user.lastName)}"/>
 
         <ImageButton
             android:id="@+id/nextButton"

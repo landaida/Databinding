@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_list">Lista de usuarios</string>
+
+    <string name="lista_no">%d usuarios</string>
 </resources>

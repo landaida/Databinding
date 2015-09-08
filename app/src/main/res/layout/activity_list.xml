@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             style="@android:style/TextAppearance.DeviceDefault.Large"
-            android:text="@{@string/quotes_no(total)}"/>
+            android:text="@{@string/lista_no(total)}"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

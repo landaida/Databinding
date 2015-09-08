@@ -9,22 +9,23 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.appsparaguay.testlistcontrol.adapter.UserAdapter;
+import com.appsparaguay.testlistcontrol.dao.UserDao;
+import com.appsparaguay.testlistcontrol.databinding.ActivityListBinding;
+import com.appsparaguay.testlistcontrol.event.ItemClickEvent;
+
 import de.greenrobot.event.EventBus;
-import pl.snowdog.databindingsample.adapter.QuotesAdapter;
-import pl.snowdog.databindingsample.dao.MockDao;
-import pl.snowdog.databindingsample.databinding.ActivityListBinding;
-import pl.snowdog.databindingsample.event.ItemClickEvent;
 
 public class ListActivity extends AppCompatActivity {
 
-    private QuotesAdapter adapter;
+    private UserAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityListBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_list);
-        binding.setTotal(MockDao.getTotal());
-        adapter = new QuotesAdapter(MockDao.quotes);
+        binding.setTotal(UserDao.getTotal());
+        adapter = new UserAdapter(UserDao.lista);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
