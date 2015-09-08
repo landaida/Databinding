@@ -8,11 +8,13 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.appsparaguay.testlistcontrol.adapter.UserAdapter;
 import com.appsparaguay.testlistcontrol.dao.UserDao;
 import com.appsparaguay.testlistcontrol.databinding.ActivityListBinding;
 import com.appsparaguay.testlistcontrol.event.ItemClickEvent;
+import com.appsparaguay.testlistcontrol.util.DividerItemDecoration;
 
 import de.greenrobot.event.EventBus;
 
@@ -27,6 +29,9 @@ public class ListActivity extends AppCompatActivity {
         binding.setTotal(UserDao.getTotal());
         adapter = new UserAdapter(UserDao.lista);
         binding.recyclerView.setAdapter(adapter);
+        RecyclerView.ItemDecoration itemDecoration =
+                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+        binding.recyclerView.addItemDecoration(itemDecoration);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 

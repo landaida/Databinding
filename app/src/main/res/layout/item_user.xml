@@ -10,21 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
         android:padding="@dimen/activity_horizontal_margin">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="5dp"
             android:lines="1"
             android:ellipsize="marquee"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@{user.firstName}"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:paddingBottom="5dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@{user.lastName}"/>
+
+
+
     </LinearLayout>
 </layout>
