@@ -9,6 +9,8 @@ import android.view.View;
 import com.appsparaguay.testlistcontrol.dao.UserDao;
 import com.appsparaguay.testlistcontrol.databinding.ActivityMainBinding;
 import com.appsparaguay.testlistcontrol.model.User;
+import com.appsparaguay.testlistcontrol.util.JsonUtils;
+import com.appsparaguay.testlistcontrol.util.LogUtil;
 import com.appsparaguay.testlistcontrol.util.RestUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -17,6 +19,9 @@ import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Collection;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -64,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
                     String tweetText = firstEvent.getString("nome");
                     // Do something with the response
 
-                    ObjectMapper mapper = new ObjectMapper();
-                    User user = mapper.readValue( "{\"firstName\":\"Ariel\", \"lastName\":\"Landaida\"}", User.class);
-                    Log.i("mylogs", user.getFirstName());
-                    Log.i("mylogs", user.getLastName());
+                    User user = JsonUtils.getObject("{\"firstName\":\"Ariel\", \"lastName\":\"Landaida\"}", User.class);
+                    LogUtil.i(user.getFirstName());
+                    LogUtil.i(user.getLastName());
+
+                    List<User> users = JsonUtils.getList("[{\"firstName\":\"Ariel\", \"lastName\":\"Landaida\"}, {\"firstName\":\"Hernan\", \"lastName\":\"Duarte\"}]", User.class);
+                    LogUtil.i(users.get(1).getFirstName());
                 } catch (Exception e) {
-                    Log.e("mylogs", e.getMessage());
+                    LogUtil.e(e.getMessage());
                 }
             }
         });
