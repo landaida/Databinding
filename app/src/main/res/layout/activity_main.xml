@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <import type="com.appsparaguay.testlistcontrol.util.StringUtils"/>
         <variable name="user" type="com.appsparaguay.testlistcontrol.model.User"/>
     </data>
-
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <include
+               android:id="@+id/tool_bar"
+               layout="@layout/tool_bar"
+               />
+       </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:padding="@dimen/activity_horizontal_margin">
+
+
 
         <TextView
             android:id="@+id/userText"
@@ -44,4 +58,5 @@
             android:layout_alignParentBottom="true"
             android:src="@drawable/ic_action_refresh"/>
     </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
 </layout>
